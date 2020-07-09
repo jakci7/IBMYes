@@ -11,7 +11,6 @@ on:
 jobs:
   ibm-cloud-restart:
     runs-on: ubuntu-latest
-
     steps:
     - uses: actions/checkout@v2
 
@@ -19,13 +18,13 @@ jobs:
        
       run: |
         chmod -R 777 ./IBM_Cloud_CLI/
+        
     - name: Login IBM Cloud
       env:
         IBM_ACCOUNT: ${{ secrets.IBM_ACCOUNT }}
         REGION_NUM: ${{ secrets.REGION_NUM }}
       run: |
         ./IBM_Cloud_CLI/ibmcloud login <<EOF
-         
         $IBM_ACCOUNT
         $REGION_NUM
         no
