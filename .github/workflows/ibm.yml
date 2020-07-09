@@ -4,7 +4,6 @@ on:
   push:
     branches: [ master ]
   pull_request:
-    
     branches: [ master ]
   schedule:
     - cron: '0 12 * * FRI'
@@ -26,6 +25,7 @@ jobs:
         REGION_NUM: ${{ secrets.REGION_NUM }}
       run: |
         ./IBM_Cloud_CLI/ibmcloud login <<EOF
+         
         $IBM_ACCOUNT
         $REGION_NUM
         no
