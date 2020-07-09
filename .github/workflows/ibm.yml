@@ -4,6 +4,7 @@ on:
   push:
     branches: [ master ]
   pull_request:
+    
     branches: [ master ]
   schedule:
     - cron: '0 12 * * FRI'
@@ -16,6 +17,7 @@ jobs:
     - uses: actions/checkout@v2
 
     - name: Init
+       
       run: |
         chmod -R 777 ./IBM_Cloud_CLI/
     - name: Login IBM Cloud
